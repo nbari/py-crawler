@@ -31,7 +31,7 @@ def makeSoup(page, url, starttime):
 def crawl(url):
     starttime = time.time()
     print 'fetching', url
-    d = getPage(url)
+    d = getPage(url, agent='twisted example')
     d.addCallback(makeSoup, url, starttime)
     d.addErrback(errorHandler)
 
